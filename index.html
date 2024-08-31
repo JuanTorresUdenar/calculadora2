@@ -74,7 +74,7 @@
             <button class="button operator" onclick="convertToFahrenheit()">T</button>
             <button class="button operator" onclick="convertToGramosKilo()" >P</button>
             <button class="button operator" onclick="convertToBarPsi()" >PR</button>
-            <button class="button operator" onclic="convertToPesoColoDolar()" >M</button>
+            <button class="button operator" onclick="convertToPesoColoDolar()" >M</button>
         </div>
     </div>
 
@@ -138,7 +138,15 @@
             let result = (parseFloat(currentInput) * 14.5038);
             currentInput = result.toString();
             updateDisplay();
-        }        
+        }
+        
+        function convertToPesoColoDolar() {
+            if (currentInput === '') return;
+            let cambioD = 0.00024; 
+            let result = parseFloat(currentInput) * cambioD;
+            currentInput = result.toFixed(2); 
+            updateDisplay();
+        }
 
         function clearDisplay() {
             currentInput = '';
