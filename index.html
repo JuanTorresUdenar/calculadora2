@@ -133,6 +133,13 @@
             updateDisplay();
         }
 
+        function convertToBarPsi() {
+            if (currentInput === '') return;
+            let result = (parseFloat(currentInput) * 14.5038);
+            currentInput = result.toString();
+            updateDisplay();
+        }        
+
         function clearDisplay() {
             currentInput = '';
             operator = '';
